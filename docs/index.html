@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strata – a 2D game engine with a real code editor</title>
+<meta name="description" content="Strata is a 2D game engine for macOS. Build games with scenes, components, physics, tilemaps and C# scripts that hot reload.">
+<link rel="icon" href="icon.png">
+<style>
+  :root { --bg:#0f1220; --card:#171b26; --line:#262c3d; --text:#e8ebf4; --muted:#9aa3b8; --accent:#6366f1; --accent2:#818cf8; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  a { color:var(--accent2); }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 24px; }
+  header { padding:20px 0; }
+  header .wrap { display:flex; align-items:center; gap:12px; }
+  header img { width:36px; height:36px; }
+  header strong { font-size:20px; letter-spacing:.2px; }
+  header nav { margin-left:auto; display:flex; gap:20px; font-size:15px; }
+  header nav a { color:var(--muted); text-decoration:none; }
+  header nav a:hover { color:var(--text); }
+  .hero { padding:56px 0 40px; text-align:center; }
+  .hero img.icon { width:112px; height:112px; }
+  h1 { font-size:clamp(34px,6vw,56px); line-height:1.1; margin:20px 0 14px; font-weight:700; letter-spacing:-.5px; }
+  .lead { color:var(--muted); font-size:clamp(17px,2.4vw,21px); max-width:680px; margin:0 auto 32px; }
+  .btn { display:inline-block; background:var(--accent); color:#fff; padding:15px 30px; border-radius:12px; font-weight:600; font-size:18px; text-decoration:none; }
+  .btn:hover { background:#7174f5; }
+  .meta { color:var(--muted); font-size:14px; margin-top:14px; }
+  .shot { margin:44px auto 0; max-width:1000px; border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.45); }
+  .shot img { display:block; width:100%; height:auto; }
+  section { padding:56px 0 8px; }
+  h2 { font-size:28px; margin:0 0 20px; letter-spacing:-.2px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; }
+  .card h3 { margin:0 0 6px; font-size:18px; }
+  .card p { margin:0; color:var(--muted); font-size:15px; }
+  ol.steps { padding-left:22px; } ol.steps li { margin:0 0 14px; }
+  code { background:#1d2232; border:1px solid var(--line); border-radius:6px; padding:2px 7px; font:13.5px ui-monospace, SFMono-Regular, Menlo, monospace; }
+  pre { background:#1d2232; border:1px solid var(--line); border-radius:10px; padding:16px; overflow:auto; font:13.5px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .note { background:#1b2033; border:1px solid #2c3556; border-radius:12px; padding:16px 18px; color:#c3cbe0; font-size:15px; }
+  footer { margin-top:64px; border-top:1px solid var(--line); padding:28px 0 48px; color:var(--muted); font-size:14px; }
+  footer p { margin:0 0 8px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <img src="icon.png" alt="">
+    <strong>Strata</strong>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#install">Install</a>
+      <a href="https://github.com/noanunikki/strata/releases">Releases</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <img class="icon" src="icon.png" alt="Strata icon">
+  <h1>Make 2D games<br>with real code.</h1>
+  <p class="lead">Strata is a 2D game engine with scenes, components, inspectors and a hierarchy. Scripts are plain C# in your own code editor, and they hot reload while you work.</p>
+  <a class="btn" href="https://github.com/noanunikki/strata/releases/latest/download/Strata-Hub-macOS-arm64.zip">Download Strata Hub for macOS</a>
+  <div class="meta">Version 0.1 &middot; macOS 11 or newer &middot; Apple Silicon (M1 and later) &middot; 70 MB &middot; free</div>
+  <div class="shot"><img src="editor.png" alt="The Strata editor with hierarchy, scene view, game view and inspector"></div>
+</div>
+
+<section id="features"><div class="wrap">
+  <h2>What is inside</h2>
+  <div class="grid">
+    <div class="card"><h3>A real editor</h3><p>Hierarchy with search, Scene and Game views, Inspector, Project browser, Console, undo and redo, and play, pause and step.</p></div>
+    <div class="card"><h3>C# scripts</h3><p>Write components in VS Code or Rider. Strata compiles them and hot reloads on save. Public fields show up in the Inspector.</p></div>
+    <div class="card"><h3>2D physics</h3><p>Rigidbodies, box and circle colliders, triggers, collision events, raycasts and a layer collision matrix.</p></div>
+    <div class="card"><h3>Tilemaps and animation</h3><p>Paint tiles right in the Scene view, set which tiles are solid, and animate sprite sheets with clips.</p></div>
+    <div class="card"><h3>UI and audio</h3><p>Text, buttons, panels, images and progress bars that anchor to the screen, plus sound effects and music.</p></div>
+    <div class="card"><h3>Build and ship</h3><p>One command packages your game as a standalone app that runs without the editor. Games you make are yours.</p></div>
+  </div>
+</div></section>
+
+<section id="install"><div class="wrap">
+  <h2>Install</h2>
+  <ol class="steps">
+    <li><strong>Download</strong> the zip above and open it. Move <code>Strata Hub</code> to your Applications folder.</li>
+    <li><strong>First launch:</strong> Strata is not yet notarized by Apple, so macOS blocks it the first time. Try to open it once, then go to <em>System Settings &rarr; Privacy &amp; Security</em>, scroll down and click <em>Open Anyway</em>. You only do this once.</li>
+    <li><strong>Create a project</strong> in the Hub. The <em>2D Platformer demo</em> template is a good place to start.</li>
+  </ol>
+  <p class="note">Prefer the terminal? Run this once instead of using Privacy &amp; Security:</p>
+<pre>xattr -dr com.apple.quarantine "/Applications/Strata Hub.app"</pre>
+</div></section>
+
+<section><div class="wrap">
+  <h2>A script looks like this</h2>
+<pre>using System.Numerics;
+using Strata;
+
+public class Mover : Component
+{
+    public float Speed = 5f;          // shows up in the Inspector
+    Rigidbody2D body;
+
+    public override void Awake() { body = GetComponent&lt;Rigidbody2D&gt;(); }
+
+    public override void Update()
+    {
+        body.Velocity = new Vector2(Input.GetAxisRaw("Horizontal") * Speed, body.Velocity.Y);
+    }
+}</pre>
+</div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Strata is free to use, including for commercial games. It is not open source: you may not redistribute or modify the app. See the <a href="https://github.com/noanunikki/strata/blob/main/LICENSE">license</a> and the <a href="https://github.com/noanunikki/strata/blob/main/THIRD-PARTY-NOTICES.md">third-party notices</a>.</p>
+    <p>This is an early version (0.1) and is provided as is, without warranty. Mac only for now.</p>
+  </div>
+</footer>
+</body>
+</html>
