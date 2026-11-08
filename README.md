@@ -13,7 +13,7 @@ tilemaps, 3D models and C# scripts that hot reload.
    ```
    xattr -dr com.apple.quarantine "/Applications/Strata Hub.app"
    ```
-3. Strata checks for new versions when it starts and downloads new versions in the background, and shows a restart notice in the Hub when one is ready. It is installed when you restart or quit. You can turn this off in Preferences.
+3. Strata keeps itself up to date. When you open the Hub it installs a newer version and restarts by itself (if you close the Hub during a download, it finishes first). You can turn this off in Preferences.
 4. Create a project in the Hub. Opening a project starts the editor as a separate app called Strata (like Unity Hub and Unity); the Hub stays open. The *2D Platformer demo* template is a good start.
 
 ## About this repository
@@ -23,4 +23,4 @@ This repository contains the website and the downloads (see **Releases**). The s
 Strata is free to use, including for commercial games, but it is not open source. See [LICENSE](LICENSE)
 and [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 
-Version 0.4.0, early release, provided as is.
+Version 0.4.1, early release, provided as is.
