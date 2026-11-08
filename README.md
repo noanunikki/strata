@@ -1,7 +1,7 @@
 # Strata
 
-A 2D game engine with a real code editor. Make games with scenes, components, inspectors, physics,
-tilemaps and C# scripts that hot reload.
+A 2D and 3D game engine with a real code editor. Make games with scenes, components, inspectors, physics,
+tilemaps, 3D models and C# scripts that hot reload.
 
 **[Download Strata Hub for macOS](https://github.com/noanunikki/strata/releases/latest/download/Strata-Hub-macOS-arm64.zip)**
 (Apple Silicon, macOS 11 or newer, 70 MB) &middot; [Website](https://noanunikki.github.io/strata/)
@@ -22,4 +22,4 @@ This repository contains the website and the downloads (see **Releases**). The s
 Strata is free to use, including for commercial games, but it is not open source. See [LICENSE](LICENSE)
 and [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 
-Version 0.1, early release, provided as is.
+Version 0.2, early release, provided as is.

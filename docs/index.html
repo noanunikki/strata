@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Strata – a 2D game engine with a real code editor</title>
-<meta name="description" content="Strata is a 2D game engine for macOS. Build games with scenes, components, physics, tilemaps and C# scripts that hot reload.">
+<title>Strata – a 2D and 3D game engine with a real code editor</title>
+<meta name="description" content="Strata is a 2D and 3D game engine for macOS. Build games with scenes, components, physics, tilemaps, 3D models and C# scripts that hot reload.">
 <link rel="icon" href="icon.png">
 <style>
   :root { --bg:#0f1220; --card:#171b26; --line:#262c3d; --text:#e8ebf4; --muted:#9aa3b8; --accent:#6366f1; --accent2:#818cf8; }
@@ -59,10 +59,10 @@
 <main>
 <div class="wrap hero">
   <img class="icon" src="icon.png" alt="Strata icon">
-  <h1>Make 2D games<br>with real code.</h1>
-  <p class="lead">Strata is a 2D game engine with scenes, components, inspectors and a hierarchy. Scripts are plain C# in your own code editor, and they hot reload while you work.</p>
+  <h1>Make 2D and 3D games<br>with real code.</h1>
+  <p class="lead">Strata is a game engine for 2D and 3D with scenes, components, inspectors and a hierarchy. Scripts are plain C# in your own code editor, and they hot reload while you work.</p>
   <a class="btn" href="https://github.com/noanunikki/strata/releases/latest/download/Strata-Hub-macOS-arm64.zip">Download Strata Hub for macOS</a>
-  <div class="meta">Version 0.1 &middot; macOS 11 or newer &middot; Apple Silicon (M1 and later) &middot; 70 MB &middot; free</div>
+  <div class="meta">Version 0.2 &middot; macOS 11 or newer &middot; Apple Silicon (M1 and later) &middot; 70 MB &middot; free</div>
   <div class="shot"><img src="editor.png" alt="The Strata editor with hierarchy, scene view, game view and inspector"></div>
 </div>
 
@@ -71,7 +71,8 @@
   <div class="grid">
     <div class="card"><h3>A real editor</h3><p>Hierarchy with search, Scene and Game views, Inspector, Project browser, Console, undo and redo, and play, pause and step.</p></div>
     <div class="card"><h3>C# scripts</h3><p>Write components in VS Code or Rider. Strata compiles them and hot reloads on save. Public fields show up in the Inspector.</p></div>
-    <div class="card"><h3>2D physics</h3><p>Rigidbodies, box and circle colliders, triggers, collision events, raycasts and a layer collision matrix.</p></div>
+    <div class="card"><h3>2D and 3D physics</h3><p>Rigidbodies, colliders, triggers, collision events and raycasts in both 2D and 3D. 3D uses BepuPhysics.</p></div>
+    <div class="card"><h3>3D scenes</h3><p>Cubes, spheres and capsules or your own .obj and .gltf models, lit by directional, point and spot lights. Fly around the scene, move, rotate and scale with handles.</p></div>
     <div class="card"><h3>Tilemaps and animation</h3><p>Paint tiles right in the Scene view, set which tiles are solid, and animate sprite sheets with clips.</p></div>
     <div class="card"><h3>UI and audio</h3><p>Text, buttons, panels, images and progress bars that anchor to the screen, plus sound effects and music.</p></div>
     <div class="card"><h3>Build and ship</h3><p>One command packages your game as a standalone app that runs without the editor. Games you make are yours.</p></div>
@@ -112,7 +113,7 @@ public class Mover : Component
 <footer>
   <div class="wrap">
     <p>Strata is free to use, including for commercial games. It is not open source: you may not redistribute or modify the app. See the <a href="https://github.com/noanunikki/strata/blob/main/LICENSE">license</a> and the <a href="https://github.com/noanunikki/strata/blob/main/THIRD-PARTY-NOTICES.md">third-party notices</a>.</p>
-    <p>This is an early version (0.1) and is provided as is, without warranty. Mac only for now.</p>
+    <p>This is an early version (0.2) and is provided as is, without warranty. Mac only for now.</p>
   </div>
 </footer>
 </body>
