@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Input Actions – Strata Learn</title>
+<meta name="description" content="Use InputAction fields in Strata scripts: add bindings in the Inspector, search for a key or press Listen, and remap inputs in Project Settings.">
+<link rel="icon" href="../icon.png">
+<style>
+  :root { --bg:#0f1220; --card:#171b26; --line:#262c3d; --text:#e8ebf4; --muted:#9aa3b8; --accent:#6366f1; --accent2:#818cf8; --green:#4ade80; --blue:#38bdf8; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  a { color:var(--accent2); }
+  .wrap { max-width:860px; margin:0 auto; padding:0 24px; }
+  .wide { max-width:1040px; margin:0 auto; padding:0 24px; }
+  header { padding:18px 0; border-bottom:1px solid var(--line); }
+  header .wide { display:flex; align-items:center; gap:12px; }
+  header img { width:32px; height:32px; }
+  header strong { font-size:19px; }
+  header nav { margin-left:auto; display:flex; gap:22px; font-size:15px; }
+  header nav a { color:var(--muted); text-decoration:none; } header nav a:hover { color:var(--text); }
+  .crumbs { color:var(--muted); font-size:14px; margin:34px 0 6px; } .crumbs a { color:var(--muted); }
+  h1 { font-size:clamp(30px,5vw,44px); line-height:1.15; margin:0 0 14px; letter-spacing:-.4px; }
+  h2 { font-size:25px; margin:48px 0 12px; letter-spacing:-.2px; }
+  h2 .n { display:inline-block; width:34px; height:34px; line-height:34px; text-align:center; border-radius:50%; background:var(--accent); color:#fff; font-size:17px; margin-right:10px; vertical-align:2px; }
+  .lead { color:var(--muted); font-size:19px; margin:0 0 18px; }
+  .chips { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 8px; }
+  .chip { font-size:13px; padding:3px 11px; border-radius:999px; background:rgba(74,222,128,.14); color:var(--green); }
+  .chip.t { background:rgba(56,189,248,.14); color:var(--blue); }
+  figure { margin:22px 0; } figure img { display:block; max-width:100%; height:auto; border:1px solid var(--line); border-radius:12px; }
+  figure.narrow img { max-width:340px; }
+  figcaption { color:var(--muted); font-size:14px; margin-top:8px; }
+  code { background:#1d2232; border:1px solid var(--line); border-radius:6px; padding:1px 6px; font:14.5px ui-monospace, SFMono-Regular, Menlo, monospace; }
+  pre { background:#1d2232; border:1px solid var(--line); border-radius:10px; padding:16px 18px; overflow:auto; font:14px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  pre code { background:none; border:0; padding:0; font-size:inherit; }
+  .note { background:#1b2033; border:1px solid #2c3556; border-radius:12px; padding:14px 18px; color:#c3cbe0; font-size:16px; margin:20px 0; }
+  kbd { background:#232a3d; border:1px solid #343c55; border-bottom-width:2px; border-radius:6px; padding:1px 7px; font:13.5px ui-monospace, Menlo, monospace; }
+  ul, ol { padding-left:24px; } li { margin:4px 0; }
+  .next { margin:56px 0 0; padding:24px; background:var(--card); border:1px solid var(--line); border-radius:14px; }
+  .next a { font-weight:600; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; margin:26px 0 8px; }
+  .card { display:block; background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; text-decoration:none; color:var(--text); transition:border-color .15s, transform .15s; }
+  .card:hover { border-color:var(--accent2); transform:translateY(-2px); }
+  .card img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
+  .card .b { padding:16px 18px 18px; } .card h3 { margin:0 0 6px; font-size:19px; } .card p { margin:0 0 12px; color:var(--muted); font-size:15px; line-height:1.55; }
+  footer { margin-top:70px; border-top:1px solid var(--line); padding:26px 0 46px; color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<header><div class="wide">
+  <img src="../icon.png" alt=""><strong>Strata</strong>
+  <nav><a href="index.html">Learn</a><a href="../index.html#install">Download</a><a href="https://github.com/noanunikki/strata/releases">Releases</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="index.html">Learn</a> &rsaquo; Input Actions</div>
+<h1>Input Actions</h1>
+<div class="chips"><span class="chip">Easy</span><span class="chip t">10 min</span></div>
+<p class="lead">An <strong>Input Action</strong> is a name like "Jump" together with the keys, mouse buttons and gamepad buttons that trigger it. You set them in the Inspector, so you do not have to write key names in code.</p>
+<h2><span class="n">1</span>Add an InputAction field</h2>
+<p>In any script add a field of the type <code>InputAction</code> (not <code>Action</code>, which is a different thing in C#):</p><pre><code>using Strata;
+
+public class Jumper : MonoBehaviour
+{
+    public InputAction jumpAction;
+
+    public override void Update()
+    {
+        if (jumpAction.WasPressedThisFrame())
+            Debug.Log(&quot;Jump!&quot;);
+    }
+}</code></pre><p>Add the script to an object. The Inspector shows <strong>Jump Action</strong>. You do not need to create it in code, Strata does that for you.</p>
+<h2><span class="n">2</span>Add a binding</h2>
+<p>Click <strong>+ Add binding</strong>. A new <strong>Binding</strong> row appears and waits for you: press a key on your keyboard (or a mouse or gamepad button) and it is set.</p><figure class="narrow"><img src="img/input-inspector.jpg" alt="An Input Action in the Inspector with two bindings: Space and a gamepad button." loading="lazy"><figcaption>An Input Action in the Inspector with two bindings: Space and a gamepad button.</figcaption></figure>
+<h2><span class="n">3</span>Search for an input</h2>
+<p>Click the name of a binding (for example <strong>Space</strong>) to search the list. Type <code>space</code>, <code>mouse</code> or <code>pad a</code> and click the one you want. Press <strong>Listen</strong> and then press the key you want if you prefer that. <kbd>Esc</kbd> cancels listening.</p><figure><img src="img/input-picker.jpg" alt="Typing &quot;spa&quot; in the search lists Space and Backspace." loading="lazy"><figcaption>Typing &quot;spa&quot; in the search lists Space and Backspace.</figcaption></figure>
+<h2><span class="n">4</span>Buttons, axes and movement</h2>
+<p>The <strong>Action Type</strong> decides what you read from the action:</p><ul><li><strong>Button</strong>: <code>IsPressed()</code>, <code>WasPressedThisFrame()</code>, <code>WasReleasedThisFrame()</code>.</li><li><strong>Axis</strong>: <code>ReadValue()</code> gives a number from -1 to 1. Give the negative key (for example <kbd>A</kbd>) a <code>Scale</code> of -1.</li><li><strong>Vector2</strong>: <code>ReadVector2()</code> gives X and Y at once. For each binding choose X or Y, for example <kbd>W</kbd> adds to Y and <kbd>D</kbd> adds to X.</li></ul><pre><code>public InputAction moveAction;     // Action Type: Vector2 (add &quot;using System.Numerics;&quot; at the top)
+
+public override void Update()
+{
+    Vector2 move = moveAction.ReadVector2();
+    Transform3D.Translate(new Vector3(move.X, 0, -move.Y) * 4f * Time.DeltaTime);
+}</code></pre><p>You can also react to an action with events: <code>jumpAction.Performed += () =&gt; Debug.Log("Jump");</code>. The <code>Canceled</code> event runs when the button is released.</p>
+<h2><span class="n">5</span>The project's own actions</h2>
+<p>Open <strong>Window &rsaquo; Project Settings</strong> and choose the <strong>Input</strong> tab. These are the actions used by <code>Input.GetButton("Jump")</code>, <code>Input.GetAxis("Horizontal")</code> and the Character Controller. Change a binding here and everything that uses it changes too. That is how you let your game use other keys, and you can add your own actions with <strong>+ Add action</strong>.</p><figure><img src="img/input-settings.jpg" alt="Project Settings, Input tab, with the Horizontal action open." loading="lazy"><figcaption>Project Settings, Input tab, with the Horizontal action open.</figcaption></figure><p>In code you can use these actions by name, <code>Input.GetAction("Jump")</code>, which gives you the same <code>InputAction</code> object.</p>
+<div class="next">Next: <a href="particles.html">Fire, smoke and sparkles</a></div>
+</main>
+<footer><div class="wide"><p>Strata is an early version and is provided as is. Guides are written for the latest release.</p>
+<p><a href="../index.html">Strata home</a> &middot; <a href="index.html">All guides</a></p></div></footer>
+</body></html>

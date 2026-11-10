@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fire, smoke and sparkles – Strata Learn</title>
+<meta name="description" content="Add particle effects in Strata: fire, smoke, sparkles and explosions, with presets and a live preview, and start bursts from a script.">
+<link rel="icon" href="../icon.png">
+<style>
+  :root { --bg:#0f1220; --card:#171b26; --line:#262c3d; --text:#e8ebf4; --muted:#9aa3b8; --accent:#6366f1; --accent2:#818cf8; --green:#4ade80; --blue:#38bdf8; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  a { color:var(--accent2); }
+  .wrap { max-width:860px; margin:0 auto; padding:0 24px; }
+  .wide { max-width:1040px; margin:0 auto; padding:0 24px; }
+  header { padding:18px 0; border-bottom:1px solid var(--line); }
+  header .wide { display:flex; align-items:center; gap:12px; }
+  header img { width:32px; height:32px; }
+  header strong { font-size:19px; }
+  header nav { margin-left:auto; display:flex; gap:22px; font-size:15px; }
+  header nav a { color:var(--muted); text-decoration:none; } header nav a:hover { color:var(--text); }
+  .crumbs { color:var(--muted); font-size:14px; margin:34px 0 6px; } .crumbs a { color:var(--muted); }
+  h1 { font-size:clamp(30px,5vw,44px); line-height:1.15; margin:0 0 14px; letter-spacing:-.4px; }
+  h2 { font-size:25px; margin:48px 0 12px; letter-spacing:-.2px; }
+  h2 .n { display:inline-block; width:34px; height:34px; line-height:34px; text-align:center; border-radius:50%; background:var(--accent); color:#fff; font-size:17px; margin-right:10px; vertical-align:2px; }
+  .lead { color:var(--muted); font-size:19px; margin:0 0 18px; }
+  .chips { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 8px; }
+  .chip { font-size:13px; padding:3px 11px; border-radius:999px; background:rgba(74,222,128,.14); color:var(--green); }
+  .chip.t { background:rgba(56,189,248,.14); color:var(--blue); }
+  figure { margin:22px 0; } figure img { display:block; max-width:100%; height:auto; border:1px solid var(--line); border-radius:12px; }
+  figure.narrow img { max-width:340px; }
+  figcaption { color:var(--muted); font-size:14px; margin-top:8px; }
+  code { background:#1d2232; border:1px solid var(--line); border-radius:6px; padding:1px 6px; font:14.5px ui-monospace, SFMono-Regular, Menlo, monospace; }
+  pre { background:#1d2232; border:1px solid var(--line); border-radius:10px; padding:16px 18px; overflow:auto; font:14px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  pre code { background:none; border:0; padding:0; font-size:inherit; }
+  .note { background:#1b2033; border:1px solid #2c3556; border-radius:12px; padding:14px 18px; color:#c3cbe0; font-size:16px; margin:20px 0; }
+  kbd { background:#232a3d; border:1px solid #343c55; border-bottom-width:2px; border-radius:6px; padding:1px 7px; font:13.5px ui-monospace, Menlo, monospace; }
+  ul, ol { padding-left:24px; } li { margin:4px 0; }
+  .next { margin:56px 0 0; padding:24px; background:var(--card); border:1px solid var(--line); border-radius:14px; }
+  .next a { font-weight:600; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; margin:26px 0 8px; }
+  .card { display:block; background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; text-decoration:none; color:var(--text); transition:border-color .15s, transform .15s; }
+  .card:hover { border-color:var(--accent2); transform:translateY(-2px); }
+  .card img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
+  .card .b { padding:16px 18px 18px; } .card h3 { margin:0 0 6px; font-size:19px; } .card p { margin:0 0 12px; color:var(--muted); font-size:15px; line-height:1.55; }
+  footer { margin-top:70px; border-top:1px solid var(--line); padding:26px 0 46px; color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<header><div class="wide">
+  <img src="../icon.png" alt=""><strong>Strata</strong>
+  <nav><a href="index.html">Learn</a><a href="../index.html#install">Download</a><a href="https://github.com/noanunikki/strata/releases">Releases</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="index.html">Learn</a> &rsaquo; Fire, smoke and sparkles</div>
+<h1>Fire, smoke and sparkles</h1>
+<div class="chips"><span class="chip">Easy</span><span class="chip t">10 min</span></div>
+<p class="lead">A <strong>Particle System</strong> makes many small pictures that move and fade. It works in both 2D and 3D scenes.</p>
+<h2><span class="n">1</span>Add an effect</h2>
+<p>Open <strong>GameObject &rsaquo; Effects</strong> and choose <strong>Fire</strong>, <strong>Smoke</strong>, <strong>Explosion</strong> or <strong>Sparkles</strong>. There is also an empty <strong>Particle System</strong> if you want to start from nothing. The effect appears in front of your scene view.</p><p>When the object is selected, the effect plays in the Scene view so you can see changes while you make them.</p><figure><img src="img/fx-play.jpg" alt="Two fires and a few sparkles. The smoke rises from the left fire." loading="lazy"><figcaption>Two fires and a few sparkles. The smoke rises from the left fire.</figcaption></figure>
+<h2><span class="n">2</span>Change it in the Inspector</h2>
+<p>Select the effect and look at the <strong>Particle System</strong> component:</p><ul><li><strong>Emission</strong>: <code>Rate</code> is how many particles per second. <code>Burst Count</code> makes a number of particles at once when the effect starts. <code>Looping</code> off plus <code>Duration</code> makes an effect that stops by itself.</li><li><strong>Shape</strong>: where the particles start (a point, a circle or a box).</li><li><strong>Motion</strong>: <code>Direction</code> and <code>Spread</code> (a wide spread flies in all directions), speed, <code>Gravity</code> and <code>Drag</code>.</li><li><strong>Look</strong>: lifetime, <code>Size Start</code> and <code>Size End</code>, <code>Color Start</code> and <code>Color End</code> (give the end color an alpha of 0 to fade out), and <code>Additive</code>.</li></ul><figure class="narrow"><img src="img/fx-inspector.jpg" alt="The Particle System component with the Fire values." loading="lazy"><figcaption>The Particle System component with the Fire values.</figcaption></figure><p><strong>Additive</strong> adds the light of the particles on top of what is behind them. It looks great on dark backgrounds (fire, sparks, magic). On a bright background leave it off, or the effect turns white.</p><p>At the bottom of the component are the buttons <strong>Restart</strong>, <strong>Stop</strong> or <strong>Play</strong>, <strong>Burst 20</strong> and <strong>Apply preset...</strong> to start from Fire, Smoke, Explosion or Sparkles again.</p>
+<h2><span class="n">3</span>Use your own picture</h2>
+<p>Drag a small PNG (for example a star) onto the <code>Texture</code> field. Each particle is then drawn with that picture. Leave it empty to use the soft circle, or choose <code>Circle</code> or <code>Square</code> in <code>Particle Shape</code>.</p>
+<h2><span class="n">4</span>Start a burst from a script</h2>
+<p>A <code>ParticleSystem</code> can be controlled from code. This makes a puff of sparks wherever a coin was collected:</p><pre><code>void Burst()
+{
+    var fx = new GameObject(&quot;Coin Burst&quot;, GameObject.Scene);
+    fx.Transform3D.Position = Transform3D.Position;     // in a 2D game use fx.Transform.Position
+    var ps = fx.AddComponent&lt;ParticleSystem&gt;();
+    ps.ApplyPreset(ParticlePreset.Explosion);
+    ps.BurstCount = 14;
+    ps.ColorStart = new Color(255, 225, 60, 255);
+    ps.AutoDestroy = true;          // removes the object when the burst is over
+    ps.Play();
+}</code></pre><p>If the object is already in your scene, you only need <code>GetComponent&lt;ParticleSystem&gt;().Emit(20)</code> to make 20 particles right now. <code>Play()</code>, <code>Stop()</code> and <code>Clear()</code> also work.</p><div class="note">The 3D Adventure template has a campfire (Fire, Smoke, a light and a sound that gets quieter when you walk away) and gems that burst into sparks. Open it to see how it is made.</div>
+<div class="next">Next: <a href="first-2d-game.html">Your first 2D game</a></div>
+</main>
+<footer><div class="wide"><p>Strata is an early version and is provided as is. Guides are written for the latest release.</p>
+<p><a href="../index.html">Strata home</a> &middot; <a href="index.html">All guides</a></p></div></footer>
+</body></html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your first 3D game – Strata Learn</title>
+<meta name="description" content="Start from the 3D Adventure template in Strata: walk around, collect gems, change the sun and add a guard.">
+<link rel="icon" href="../icon.png">
+<style>
+  :root { --bg:#0f1220; --card:#171b26; --line:#262c3d; --text:#e8ebf4; --muted:#9aa3b8; --accent:#6366f1; --accent2:#818cf8; --green:#4ade80; --blue:#38bdf8; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  a { color:var(--accent2); }
+  .wrap { max-width:860px; margin:0 auto; padding:0 24px; }
+  .wide { max-width:1040px; margin:0 auto; padding:0 24px; }
+  header { padding:18px 0; border-bottom:1px solid var(--line); }
+  header .wide { display:flex; align-items:center; gap:12px; }
+  header img { width:32px; height:32px; }
+  header strong { font-size:19px; }
+  header nav { margin-left:auto; display:flex; gap:22px; font-size:15px; }
+  header nav a { color:var(--muted); text-decoration:none; } header nav a:hover { color:var(--text); }
+  .crumbs { color:var(--muted); font-size:14px; margin:34px 0 6px; } .crumbs a { color:var(--muted); }
+  h1 { font-size:clamp(30px,5vw,44px); line-height:1.15; margin:0 0 14px; letter-spacing:-.4px; }
+  h2 { font-size:25px; margin:48px 0 12px; letter-spacing:-.2px; }
+  h2 .n { display:inline-block; width:34px; height:34px; line-height:34px; text-align:center; border-radius:50%; background:var(--accent); color:#fff; font-size:17px; margin-right:10px; vertical-align:2px; }
+  .lead { color:var(--muted); font-size:19px; margin:0 0 18px; }
+  .chips { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 8px; }
+  .chip { font-size:13px; padding:3px 11px; border-radius:999px; background:rgba(74,222,128,.14); color:var(--green); }
+  .chip.t { background:rgba(56,189,248,.14); color:var(--blue); }
+  figure { margin:22px 0; } figure img { display:block; max-width:100%; height:auto; border:1px solid var(--line); border-radius:12px; }
+  figure.narrow img { max-width:340px; }
+  figcaption { color:var(--muted); font-size:14px; margin-top:8px; }
+  code { background:#1d2232; border:1px solid var(--line); border-radius:6px; padding:1px 6px; font:14.5px ui-monospace, SFMono-Regular, Menlo, monospace; }
+  pre { background:#1d2232; border:1px solid var(--line); border-radius:10px; padding:16px 18px; overflow:auto; font:14px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  pre code { background:none; border:0; padding:0; font-size:inherit; }
+  .note { background:#1b2033; border:1px solid #2c3556; border-radius:12px; padding:14px 18px; color:#c3cbe0; font-size:16px; margin:20px 0; }
+  kbd { background:#232a3d; border:1px solid #343c55; border-bottom-width:2px; border-radius:6px; padding:1px 7px; font:13.5px ui-monospace, Menlo, monospace; }
+  ul, ol { padding-left:24px; } li { margin:4px 0; }
+  .next { margin:56px 0 0; padding:24px; background:var(--card); border:1px solid var(--line); border-radius:14px; }
+  .next a { font-weight:600; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; margin:26px 0 8px; }
+  .card { display:block; background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; text-decoration:none; color:var(--text); transition:border-color .15s, transform .15s; }
+  .card:hover { border-color:var(--accent2); transform:translateY(-2px); }
+  .card img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
+  .card .b { padding:16px 18px 18px; } .card h3 { margin:0 0 6px; font-size:19px; } .card p { margin:0 0 12px; color:var(--muted); font-size:15px; line-height:1.55; }
+  footer { margin-top:70px; border-top:1px solid var(--line); padding:26px 0 46px; color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<header><div class="wide">
+  <img src="../icon.png" alt=""><strong>Strata</strong>
+  <nav><a href="index.html">Learn</a><a href="../index.html#install">Download</a><a href="https://github.com/noanunikki/strata/releases">Releases</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="index.html">Learn</a> &rsaquo; Your first 3D game</div>
+<h1>Your first 3D game</h1>
+<div class="chips"><span class="chip">Beginner</span><span class="chip t">20 min</span></div>
+<p class="lead">The <strong>3D Adventure</strong> template is a small game with a character you walk and jump with, shadows, a campfire with sound, gems to collect and guards that chase you. You will play it and then change it.</p>
+<h2><span class="n">1</span>Make the project</h2>
+<p>In Strata Hub choose <strong>New project</strong>, then <strong>3D game</strong> and <strong>3D Adventure</strong>. Name it and click <strong>Create project</strong>.</p><figure><img src="img/hub-new-3d.jpg" alt="The 3D Adventure template on the New project page." loading="lazy"><figcaption>The 3D Adventure template on the New project page.</figcaption></figure>
+<h2><span class="n">2</span>Play it</h2>
+<p>Click <strong>Play</strong>, then click once inside the Game view so it gets your keyboard. Move with <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>, run with <kbd>Shift</kbd> and jump with <kbd>Space</kbd>. Hold the <strong>right mouse button</strong> and move the mouse to look around. Press <kbd>Esc</kbd> for the pause menu, where you can change the music and sound volume.</p><figure><img src="img/play-3d.jpg" alt="The 3D Adventure game running. The red capsule is a guard." loading="lazy"><figcaption>The 3D Adventure game running. The red capsule is a guard.</figcaption></figure><p>Collect all 10 gems. Stay away from the red guards: if they catch you, you start again from the beginning. Your best score is saved on your computer.</p>
+<h2><span class="n">3</span>Find your way around the editor</h2>
+<p>Stop the game. The Scene view is a 3D view of the level. <strong>Hold the right mouse button</strong> and use <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> <kbd>Q</kbd> <kbd>E</kbd> to fly around. Hold <kbd>Alt</kbd> and drag with the left button to orbit, and use the mouse wheel to zoom. Click an object to select it and press <kbd>F</kbd> to focus on it.</p><figure><img src="img/editor-3d.jpg" alt="The editor with the Player selected. The Hierarchy groups objects into Level, Trees, Rocks, Gems, Guards and more." loading="lazy"><figcaption>The editor with the Player selected. The Hierarchy groups objects into Level, Trees, Rocks, Gems, Guards and more.</figcaption></figure>
+<h2><span class="n">4</span>Change the character</h2>
+<p>Select <strong>Player</strong>. The <strong>Character Controller</strong> component holds everything about how it moves. Try <code>Walk Speed</code>, <code>Sprint Speed</code> and <code>Jump Height</code>. <code>Gravity Multiplier</code> makes falling faster, which makes jumps feel snappier.</p><figure class="narrow"><img src="img/charctrl.jpg" alt="The Character Controller component in the Inspector." loading="lazy"><figcaption>The Character Controller component in the Inspector.</figcaption></figure><p>The camera is on the <strong>Main Camera</strong> object. Its <strong>Third Person Camera</strong> component has <code>Distance</code>, <code>Min Pitch</code>, <code>Max Pitch</code> and the target to follow.</p><figure class="narrow"><img src="img/camera-3d.jpg" alt="Camera 3D and Third Person Camera on the Main Camera." loading="lazy"><figcaption>Camera 3D and Third Person Camera on the Main Camera.</figcaption></figure>
+<h2><span class="n">5</span>Move the sun</h2>
+<p>Select <strong>Sun</strong>. Its rotation decides where the light comes from and where shadows fall. Change <code>Local Euler Angles</code> and look at the shadows of the trees in the Scene view. The <strong>Light 3D</strong> component has <code>Cast Shadows</code> if you want to turn shadows off, and <code>Intensity</code> and <code>Color</code> change the light.</p>
+<h2><span class="n">6</span>Add a gem</h2>
+<p>Open the <strong>Gems</strong> group, select a <strong>Gem</strong> and duplicate it with <kbd>Cmd</kbd>+<kbd>D</kbd>. Press <kbd>W</kbd> and move it with the arrows. The counter in the top left counts all gems in the level, so it now shows 11.</p>
+<h2><span class="n">7</span>Add a guard</h2>
+<p>Open <strong>Guards</strong>, select <strong>Guard A</strong> and duplicate it. The <strong>Enemy</strong> component has <code>Sight Range</code>, <code>Patrol Speed</code> and <code>Chase Speed</code>. A guard walks between its <strong>Patrol Points</strong>, chases you when it sees you, and walks home when it loses you.</p><p>To give the new guard its own route, create empty objects with <strong>GameObject &rsaquo; Create Empty</strong>, put them where it should walk, then click <code>+</code> in the <strong>Patrol Points</strong> list and drag the objects from the Hierarchy onto the new slots. Guards find their way around trees and rocks with a <strong>Nav Grid</strong>, which is on the <strong>Navigation</strong> object.</p>
+<h2><span class="n">8</span>Save</h2>
+<p>Press <kbd>Cmd</kbd>+<kbd>S</kbd> to save the scene. To make a game you can share, use <strong>Window &rsaquo; Build</strong>.</p>
+<div class="next">Next: <a href="first-script.html">Write your first script</a></div>
+</main>
+<footer><div class="wide"><p>Strata is an early version and is provided as is. Guides are written for the latest release.</p>
+<p><a href="../index.html">Strata home</a> &middot; <a href="index.html">All guides</a></p></div></footer>
+</body></html>

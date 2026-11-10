@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learn – Strata Learn</title>
+<meta name="description" content="Step by step guides for Strata, the 2D and 3D game engine.">
+<link rel="icon" href="../icon.png">
+<style>
+  :root { --bg:#0f1220; --card:#171b26; --line:#262c3d; --text:#e8ebf4; --muted:#9aa3b8; --accent:#6366f1; --accent2:#818cf8; --green:#4ade80; --blue:#38bdf8; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  a { color:var(--accent2); }
+  .wrap { max-width:860px; margin:0 auto; padding:0 24px; }
+  .wide { max-width:1040px; margin:0 auto; padding:0 24px; }
+  header { padding:18px 0; border-bottom:1px solid var(--line); }
+  header .wide { display:flex; align-items:center; gap:12px; }
+  header img { width:32px; height:32px; }
+  header strong { font-size:19px; }
+  header nav { margin-left:auto; display:flex; gap:22px; font-size:15px; }
+  header nav a { color:var(--muted); text-decoration:none; } header nav a:hover { color:var(--text); }
+  .crumbs { color:var(--muted); font-size:14px; margin:34px 0 6px; } .crumbs a { color:var(--muted); }
+  h1 { font-size:clamp(30px,5vw,44px); line-height:1.15; margin:0 0 14px; letter-spacing:-.4px; }
+  h2 { font-size:25px; margin:48px 0 12px; letter-spacing:-.2px; }
+  h2 .n { display:inline-block; width:34px; height:34px; line-height:34px; text-align:center; border-radius:50%; background:var(--accent); color:#fff; font-size:17px; margin-right:10px; vertical-align:2px; }
+  .lead { color:var(--muted); font-size:19px; margin:0 0 18px; }
+  .chips { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 8px; }
+  .chip { font-size:13px; padding:3px 11px; border-radius:999px; background:rgba(74,222,128,.14); color:var(--green); }
+  .chip.t { background:rgba(56,189,248,.14); color:var(--blue); }
+  figure { margin:22px 0; } figure img { display:block; max-width:100%; height:auto; border:1px solid var(--line); border-radius:12px; }
+  figure.narrow img { max-width:340px; }
+  figcaption { color:var(--muted); font-size:14px; margin-top:8px; }
+  code { background:#1d2232; border:1px solid var(--line); border-radius:6px; padding:1px 6px; font:14.5px ui-monospace, SFMono-Regular, Menlo, monospace; }
+  pre { background:#1d2232; border:1px solid var(--line); border-radius:10px; padding:16px 18px; overflow:auto; font:14px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  pre code { background:none; border:0; padding:0; font-size:inherit; }
+  .note { background:#1b2033; border:1px solid #2c3556; border-radius:12px; padding:14px 18px; color:#c3cbe0; font-size:16px; margin:20px 0; }
+  kbd { background:#232a3d; border:1px solid #343c55; border-bottom-width:2px; border-radius:6px; padding:1px 7px; font:13.5px ui-monospace, Menlo, monospace; }
+  ul, ol { padding-left:24px; } li { margin:4px 0; }
+  .next { margin:56px 0 0; padding:24px; background:var(--card); border:1px solid var(--line); border-radius:14px; }
+  .next a { font-weight:600; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; margin:26px 0 8px; }
+  .card { display:block; background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; text-decoration:none; color:var(--text); transition:border-color .15s, transform .15s; }
+  .card:hover { border-color:var(--accent2); transform:translateY(-2px); }
+  .card img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
+  .card .b { padding:16px 18px 18px; } .card h3 { margin:0 0 6px; font-size:19px; } .card p { margin:0 0 12px; color:var(--muted); font-size:15px; line-height:1.55; }
+  footer { margin-top:70px; border-top:1px solid var(--line); padding:26px 0 46px; color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<header><div class="wide">
+  <img src="../icon.png" alt=""><strong>Strata</strong>
+  <nav><a href="index.html">Learn</a><a href="../index.html#install">Download</a><a href="https://github.com/noanunikki/strata/releases">Releases</a></nav>
+</div></header>
+
+<main class="wide">
+<div class="crumbs"><a href="../index.html">Strata</a> &rsaquo; Learn</div>
+<h1>Learn Strata</h1>
+<p class="lead">Step by step guides with pictures. Start with your first game, then learn scripts, input and effects.</p>
+<div class="grid">
+<a class="card" href="first-2d-game.html"><img src="img/first-2d-game.png" alt="" loading="lazy"><div class="b"><h3>Your first 2D game</h3><p>Make a 2D platformer in Strata from a template, press Play, then change the player and add coins and an enemy.</p><div class="chips"><span class="chip">Beginner</span><span class="chip t">15 min</span></div></div></a>
+<a class="card" href="first-3d-game.html"><img src="img/first-3d-game.png" alt="" loading="lazy"><div class="b"><h3>Your first 3D game</h3><p>Start from the 3D Adventure template in Strata: walk around, collect gems, change the sun and add a guard.</p><div class="chips"><span class="chip">Beginner</span><span class="chip t">20 min</span></div></div></a>
+<a class="card" href="first-script.html"><img src="img/first-script.png" alt="" loading="lazy"><div class="b"><h3>Write your first script</h3><p>Write a C# script in Strata, add it to an object, show a value in the Inspector and make a cube spin and move.</p><div class="chips"><span class="chip">Beginner</span><span class="chip t">10 min</span></div></div></a>
+<a class="card" href="input-actions.html"><img src="img/input-actions.png" alt="" loading="lazy"><div class="b"><h3>Input Actions</h3><p>Use InputAction fields in Strata scripts: add bindings in the Inspector, search for a key or press Listen, and remap inputs in Project Settings.</p><div class="chips"><span class="chip">Easy</span><span class="chip t">10 min</span></div></div></a>
+<a class="card" href="particles.html"><img src="img/particles.png" alt="" loading="lazy"><div class="b"><h3>Fire, smoke and sparkles</h3><p>Add particle effects in Strata: fire, smoke, sparkles and explosions, with presets and a live preview, and start bursts from a script.</p><div class="chips"><span class="chip">Easy</span><span class="chip t">10 min</span></div></div></a>
+</div>
+<p style="color:var(--muted);margin-top:34px">More guides are coming. You can open this page from the editor too: <strong>Help &rsaquo; Learn: open the guides</strong>, or from Strata Hub: <strong>Learn</strong>.</p>
+</main>
+<footer><div class="wide"><p>Strata is an early version and is provided as is. Guides are written for the latest release.</p>
+<p><a href="../index.html">Strata home</a> &middot; <a href="index.html">All guides</a></p></div></footer>
+</body></html>

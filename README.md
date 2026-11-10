@@ -23,4 +23,4 @@ This repository contains the website and the downloads (see **Releases**). The s
 Strata is free to use, including for commercial games, but it is not open source. See [LICENSE](LICENSE)
 and [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 
-Version 0.9.0, early release, provided as is.
+Version 0.10.0, early release, provided as is.

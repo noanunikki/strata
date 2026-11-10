@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your first 2D game – Strata Learn</title>
+<meta name="description" content="Make a 2D platformer in Strata from a template, press Play, then change the player and add coins and an enemy.">
+<link rel="icon" href="../icon.png">
+<style>
+  :root { --bg:#0f1220; --card:#171b26; --line:#262c3d; --text:#e8ebf4; --muted:#9aa3b8; --accent:#6366f1; --accent2:#818cf8; --green:#4ade80; --blue:#38bdf8; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  a { color:var(--accent2); }
+  .wrap { max-width:860px; margin:0 auto; padding:0 24px; }
+  .wide { max-width:1040px; margin:0 auto; padding:0 24px; }
+  header { padding:18px 0; border-bottom:1px solid var(--line); }
+  header .wide { display:flex; align-items:center; gap:12px; }
+  header img { width:32px; height:32px; }
+  header strong { font-size:19px; }
+  header nav { margin-left:auto; display:flex; gap:22px; font-size:15px; }
+  header nav a { color:var(--muted); text-decoration:none; } header nav a:hover { color:var(--text); }
+  .crumbs { color:var(--muted); font-size:14px; margin:34px 0 6px; } .crumbs a { color:var(--muted); }
+  h1 { font-size:clamp(30px,5vw,44px); line-height:1.15; margin:0 0 14px; letter-spacing:-.4px; }
+  h2 { font-size:25px; margin:48px 0 12px; letter-spacing:-.2px; }
+  h2 .n { display:inline-block; width:34px; height:34px; line-height:34px; text-align:center; border-radius:50%; background:var(--accent); color:#fff; font-size:17px; margin-right:10px; vertical-align:2px; }
+  .lead { color:var(--muted); font-size:19px; margin:0 0 18px; }
+  .chips { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 8px; }
+  .chip { font-size:13px; padding:3px 11px; border-radius:999px; background:rgba(74,222,128,.14); color:var(--green); }
+  .chip.t { background:rgba(56,189,248,.14); color:var(--blue); }
+  figure { margin:22px 0; } figure img { display:block; max-width:100%; height:auto; border:1px solid var(--line); border-radius:12px; }
+  figure.narrow img { max-width:340px; }
+  figcaption { color:var(--muted); font-size:14px; margin-top:8px; }
+  code { background:#1d2232; border:1px solid var(--line); border-radius:6px; padding:1px 6px; font:14.5px ui-monospace, SFMono-Regular, Menlo, monospace; }
+  pre { background:#1d2232; border:1px solid var(--line); border-radius:10px; padding:16px 18px; overflow:auto; font:14px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  pre code { background:none; border:0; padding:0; font-size:inherit; }
+  .note { background:#1b2033; border:1px solid #2c3556; border-radius:12px; padding:14px 18px; color:#c3cbe0; font-size:16px; margin:20px 0; }
+  kbd { background:#232a3d; border:1px solid #343c55; border-bottom-width:2px; border-radius:6px; padding:1px 7px; font:13.5px ui-monospace, Menlo, monospace; }
+  ul, ol { padding-left:24px; } li { margin:4px 0; }
+  .next { margin:56px 0 0; padding:24px; background:var(--card); border:1px solid var(--line); border-radius:14px; }
+  .next a { font-weight:600; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; margin:26px 0 8px; }
+  .card { display:block; background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; text-decoration:none; color:var(--text); transition:border-color .15s, transform .15s; }
+  .card:hover { border-color:var(--accent2); transform:translateY(-2px); }
+  .card img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
+  .card .b { padding:16px 18px 18px; } .card h3 { margin:0 0 6px; font-size:19px; } .card p { margin:0 0 12px; color:var(--muted); font-size:15px; line-height:1.55; }
+  footer { margin-top:70px; border-top:1px solid var(--line); padding:26px 0 46px; color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<header><div class="wide">
+  <img src="../icon.png" alt=""><strong>Strata</strong>
+  <nav><a href="index.html">Learn</a><a href="../index.html#install">Download</a><a href="https://github.com/noanunikki/strata/releases">Releases</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="crumbs"><a href="index.html">Learn</a> &rsaquo; Your first 2D game</div>
+<h1>Your first 2D game</h1>
+<div class="chips"><span class="chip">Beginner</span><span class="chip t">15 min</span></div>
+<p class="lead">You will make a small platformer from a template, play it, and then change it: a faster player, more coins and one more enemy. You need Strata installed and nothing else.</p>
+<h2><span class="n">1</span>Make the project</h2>
+<p>Open <strong>Strata Hub</strong>. Click <strong>New project</strong>, choose <strong>2D game</strong> and the <strong>2D Platformer</strong> template, give the project a name and click <strong>Create project</strong>.</p><figure><img src="img/hub-new-2d.jpg" alt="The New project page of Strata Hub with the 2D Platformer template selected." loading="lazy"><figcaption>The New project page of Strata Hub with the 2D Platformer template selected.</figcaption></figure><p>The editor opens in its own window (the app called <strong>Strata</strong>). The Hub stays open so you can start other projects.</p>
+<h2><span class="n">2</span>Look around the editor</h2>
+<p>The editor has four main parts:</p><ul><li><strong>Hierarchy</strong> (left): every object in the scene. Objects can be inside other objects, like <em>Coins</em> and <em>Slimes</em>.</li><li><strong>Scene</strong> (middle): the level you are building. Click an object to select it.</li><li><strong>Inspector</strong> (right): the components of the selected object. Click <strong>Player</strong> to see its Sprite Renderer, Rigidbody 2D, Box Collider 2D and Player Controller.</li><li><strong>Project</strong> (bottom): the files of your game, like sprites, scripts and scenes.</li></ul><figure><img src="img/editor-2d.jpg" alt="The Strata editor with the Player selected in the 2D Platformer project." loading="lazy"><figcaption>The Strata editor with the Player selected in the 2D Platformer project.</figcaption></figure>
+<h2><span class="n">3</span>Press Play</h2>
+<p>Click the green <strong>Play</strong> button at the top. The <strong>Game</strong> tab opens. Move with <kbd>A</kbd> and <kbd>D</kbd> (or the arrow keys) and jump with <kbd>Space</kbd>. Jump on slimes and touch coins to collect them.</p><figure><img src="img/play-2d.jpg" alt="The game running in the Game view." loading="lazy"><figcaption>The game running in the Game view.</figcaption></figure><p>Click the red <strong>Stop</strong> button to go back to editing.</p><div class="note">Changes you make while the game is playing are not saved. Stop the game first, then edit.</div>
+<h2><span class="n">4</span>Change how the player feels</h2>
+<p>Select <strong>Player</strong> in the Hierarchy. In the <strong>Player Controller</strong> component change <code>Move Speed</code> from 7 to 10 and <code>Jump Speed</code> from 14 to 18. Press Play again and notice the difference.</p><p>Every public field in a script shows up in the Inspector like this. You will make your own in the <a href="first-script.html">script guide</a>.</p>
+<h2><span class="n">5</span>Add more coins</h2>
+<p>Open the <strong>Coins</strong> group in the Hierarchy and click one <strong>Coin</strong>. Press <kbd>Cmd</kbd>+<kbd>D</kbd> (<kbd>Ctrl</kbd>+<kbd>D</kbd> on other systems) to duplicate it. Press <kbd>W</kbd> for the Move tool and drag the arrows in the Scene view, or type new numbers into <code>Local Position</code> in the Inspector.</p><p>Scroll the Scene view with two fingers or the mouse wheel to zoom, and drag with the middle or right mouse button to pan.</p>
+<h2><span class="n">6</span>Add an enemy</h2>
+<p>Open <strong>Slimes</strong>, select a <strong>Slime</strong>, duplicate it with <kbd>Cmd</kbd>+<kbd>D</kbd> and move it somewhere new. The <strong>Patrol</strong> component makes it walk back and forth: <code>Speed</code> is how fast, and <code>Range</code> is how far from its start it goes.</p>
+<h2><span class="n">7</span>Save and share</h2>
+<p>Press <kbd>Cmd</kbd>+<kbd>S</kbd> to save the scene. When you want a game you can give to others, open <strong>Window &rsaquo; Build</strong>, choose an output folder and click <strong>Build</strong>. Use <strong>Run build</strong> to try it, or <strong>Show in Finder</strong> to find the files.</p>
+<div class="next">Next: <a href="first-3d-game.html">Your first 3D game</a></div>
+</main>
+<footer><div class="wide"><p>Strata is an early version and is provided as is. Guides are written for the latest release.</p>
+<p><a href="../index.html">Strata home</a> &middot; <a href="index.html">All guides</a></p></div></footer>
+</body></html>
